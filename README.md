@@ -1,5 +1,5 @@
 # Check-EternalBlue
-Check if your computer was patched against EternalBlue.
+Check if your computer is patched against EternalBlue.
 
 *IMPORTANT*: InternalBlue is used as a propagation machanism. Patching the system does not mean that it is protected against the encryption routine. It only means that the system is protected against the "wormness" of recent WannaCry's variant.
 
