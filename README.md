@@ -15,6 +15,14 @@ Check if your computer is patched against EternalBlue.
  PS > powershell {script_dir}\VerifyEternalBlue.ps1 -InputFile {path_to_hostname_list}
  ```
 
+Writing about EternalBlue:
+
+ * [Check-EternalBlue: Is your PC patched against the WannaCryptor worm vulnerability?](https://www.welivesecurity.com/2017/05/16/check-eternalblue-pc-patched-wannacryptor-worm-vulnerability/)
+ 
+[BRAZUCAS]
+ * [Check-EternalBlue: Verifique se o seu PC está protegido contra a vulnerabilidade explorada pelo WannaCry](https://www.welivesecurity.com/br/2017/05/16/check-eternalblue-seu-pc-protegido/)
+
+[/BRAZUCAS]
 
 *IMPORTANT*: EternalBlue is used as a propagation mechanism. Patching the system does not mean that it is protected against the encryption routine. It only means that the system is protected against the "wormness" of recent WannaCry's variant.
 
@@ -25,3 +33,5 @@ Learn more:
   * Microsoft guidance: https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
   * Tech data: https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168
   * WannaCry's profit: http://howmuchwannacrypaidthehacker.com 
+
+Follow me at [@cpuodzius](https://twitter.com/cpuodzius)
