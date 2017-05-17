@@ -1,6 +1,21 @@
 # Check-EternalBlue
 Check if your computer is patched against EternalBlue.
 
+### Local verification (VB script):
+
+ - Run [VerifyEternalBlue.vbs](https://github.com/puodzius/Check-EternalBlue/blob/master/VerifyEternalBlue.vbs) on your Windows compute
+
+### Remote verification (PS scripts):
+
+ - Download [VerifyEternalBlue.ps1](https://github.com/puodzius/Check-EternalBlue/blob/master/VerifyEternalBlue.ps1) and [Logging_Functions.ps1](https://github.com/puodzius/Check-EternalBlue/blob/master/Logging_Functions.ps1) to the same directory
+ - Prepare a list of hostnames you want to check
+ - Run VerifyEternalBlue.ps1 as follows:
+ 
+ ```sh
+ PS > powershell {script_dir}\VerifyEternalBlue.ps1 -InputFile {path_to_hostname_list}
+ ```
+
+
 *IMPORTANT*: EternalBlue is used as a propagation mechanism. Patching the system does not mean that it is protected against the encryption routine. It only means that the system is protected against the "wormness" of recent WannaCry's variant.
 
 Learn more:
