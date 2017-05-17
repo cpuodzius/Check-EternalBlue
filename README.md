@@ -3,7 +3,7 @@ Check if your computer is patched against EternalBlue.
 
 ### Local verification (VB script):
 
- - Run [VerifyEternalBlue.vbs](https://github.com/puodzius/Check-EternalBlue/blob/master/VerifyEternalBlue.vbs) on your Windows compute
+ - Run [VerifyEternalBlue.vbs](https://github.com/puodzius/Check-EternalBlue/blob/master/VerifyEternalBlue.vbs) on your Windows computer
 
 ### Remote verification (PS scripts):
 
