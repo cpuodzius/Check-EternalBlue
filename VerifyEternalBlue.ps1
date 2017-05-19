@@ -109,6 +109,17 @@ KBList.Add("4015217")
 KBList.Add("4015438")
 KBList.Add("4016635")
 
+# From: WannaCrypt Ransomware Customer Guidance: https://static.spiceworks.com/attachments/post/0017/5996/CustomerReady_WannaCrypt_Guidance.pdf
+# TODO: Get short list of KBs needed to check for EternalBlue patch
+#
+
+KBList.Add("4015549")
+KBList.Add("4015550")
+KBList.Add("4015551")
+KBList.Add("4019215")
+KBList.Add("4019216")
+KBList.Add("4019264")
+
 #Script Version
 $sScriptVersion = "0.1"
 $sScriptName = "VerifyEternalBlue"
