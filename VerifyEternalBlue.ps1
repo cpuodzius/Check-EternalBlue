@@ -148,7 +148,14 @@ ForEach($Hostname in $Hostnames) {
       Log-Error -LogPath $sLogFile -ErrorDesc $LogMessage -ExitGracefully $False
       Continue
   }
-
+  
+  # Obtain the last boot time of the system
+  Write-Verbose "`tObtaining last boot time for $HostName"
+  Write-Debug "Establishing CimSession using DCOM for Powershellv2 compatibility"
+  $cimsess = New-CimSession -ComputerName $HostName -Credential $Credential -SessionOption (New-CimSessionOption -Protocol Dcom)
+  $lastboot = (Get-CimInstance -ClassName win32_operatingsystem -CimSession $cimsess).LastBootUpTime
+  Write-Host "`t$HostName was last booted at $lastboot"
+  $cimsess.Close()
   Write-Host "`tGetting HotFix list..."
 
   If($GetCredential) {
@@ -162,6 +169,14 @@ ForEach($Hostname in $Hostnames) {
   ForEach($Entry in $HotFixList) {
     ForEach($KB in $KBList) {
       If($Entry -Like "*$KB*") {
+        # Compare last boot time and KB install date
+        Write-Debug "lastboot = $lastboot"
+        Write-Debug "$kb install date: $($entry.installedon)"
+        if($lastboot -lt $entry.InstalledOn){
+          Write-Warning "KB $KB applied on $($entry.InstalledOn), but system was last rebooted at $lastboot.  Please reboot the system"
+          Continue # System is still vulnerable despite patch installation, so continue to next KB in list
+        }
+        
         $Patched = $True
         Break
       }
